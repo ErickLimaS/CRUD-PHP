@@ -15,7 +15,7 @@
             <main class="min-h-[70vh] grid lg:grid-cols-[1fr,3fr] gap-x-8">
 
                 <div class="grid gap-y-8 lg:max-w-[360px]">
-                    <div class="bg-[#000000] text-white p-8 mb-4 md:w-max rounded-sm shadow-md shadow-black/50">
+                    <div class="bg-[#000000] text-white p-8 mb-4 md:w-max h-min rounded-sm shadow-md shadow-black/50">
                         <h1 class="text-3xl font-semibold mb-4">PHP CRUD</h1>
 
                         <p class="text-xl">Create a user, update or delete it!</p>
@@ -23,43 +23,47 @@
                         <p class="text-xl">This is exactly made for practice!</p>
                     </div>
 
-                    <div>
+                    @auth
+                        {{-- EMPTY --}}
+                    @else
+                        <div>
 
-                        <h2 class="mb-4 pb-2 text-2xl font-semibold border-b-2 border-black/25">Create a user</h2>
+                            <h2 class="mb-4 pb-2 text-2xl font-semibold border-b-2 border-black/25">Create a user</h2>
 
-                        <form action="/register" method="POST" class="grid gap-y-2 flex-col w-fill">
-                            @csrf
-                            <label class="flex flex-col font-semibold">
-                                Name
-                                <input type="text" name="name" placeholder="Name" required
-                                    class="p-2 rounded-sm font-normal" />
-                            </label>
-                            <label class="flex flex-col font-semibold">
-                                Email
-                                <input type="email" name="email" placeholder="Email" required
-                                    class="p-2 rounded-sm font-normal" />
-                            </label>
-                            <label class="flex flex-col font-semibold">
-                                Password
-                                <input type="password" name="password" placeholder="Password" required
-                                    class="p-2 rounded-sm font-normal" />
-                            </label>
+                            <form action="/register" method="POST" class="grid gap-y-2 flex-col w-fill">
+                                @csrf
+                                <label class="flex flex-col font-semibold">
+                                    Name
+                                    <input type="text" name="name" placeholder="Name" required
+                                        class="p-2 rounded-sm font-normal" />
+                                </label>
+                                <label class="flex flex-col font-semibold">
+                                    Email
+                                    <input type="email" name="email" placeholder="Email" required
+                                        class="p-2 rounded-sm font-normal" />
+                                </label>
+                                <label class="flex flex-col font-semibold">
+                                    Password
+                                    <input type="password" name="password" placeholder="Password" required
+                                        class="p-2 rounded-sm font-normal" />
+                                </label>
 
-                            <button type="submit"
-                                class="mt-4 bg-black text-white font-semibold p-2 hover:scale-105 transition-transform">Create</button>
-                        </form>
+                                <button type="submit"
+                                    class="mt-4 bg-black text-white font-semibold p-2 hover:scale-105 transition-transform">Create</button>
+                            </form>
 
-                    </div>
+                        </div>
+                    @endauth
+
                 </div>
 
                 <div>
 
-                    <h2 class="mb-8 text-2xl font-bold text-black/85 ">Registered Users</h2>
-
                     @auth
-                        <p>Logged in as <b>{{ auth()->user()->name }}</b></p>
+                        <x-home.postsSection />
                     @else
-                        <p>You need to be logged in to see the users</p>
+                        <h2 class="mb-8 text-2xl font-bold text-black/85 ">Posts</h2>
+                        <p>You need to be logged in to see your posts</p>
                     @endauth
 
                 </div>

@@ -5,6 +5,8 @@
         <a href="/" class="py-4 font-medium hover:scale-110">HOME</a>
 
         @auth
+            <p class="max-sm:hidden font-semibold text-xl">{{ auth()->user()->name }}</p>
+
             <form action="/logout" method="POST">
                 @csrf
                 <button
