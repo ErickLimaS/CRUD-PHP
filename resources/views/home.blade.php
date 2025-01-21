@@ -35,17 +35,17 @@
                                 <label class="flex flex-col font-semibold">
                                     Name
                                     <input type="text" name="name" placeholder="Name" required
-                                        class="p-2 rounded-sm font-normal" />
+                                        class="p-2 border-2 rounded-sm font-normal" />
                                 </label>
                                 <label class="flex flex-col font-semibold">
                                     Email
                                     <input type="email" name="email" placeholder="Email" required
-                                        class="p-2 rounded-sm font-normal" />
+                                        class="p-2 border-2 rounded-sm font-normal" />
                                 </label>
                                 <label class="flex flex-col font-semibold">
                                     Password
                                     <input type="password" name="password" placeholder="Password" required
-                                        class="p-2 rounded-sm font-normal" />
+                                        class="p-2 border-2 rounded-sm font-normal" />
                                 </label>
 
                                 <button type="submit"

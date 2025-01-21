@@ -16,24 +16,28 @@
 
             <div>
 
-                <h1>Login to PHP CRUD</h1>
+                <h1 class="my-16 text-center text-4xl font-semibold">Login to PHP CRUD</h1>
 
-                <form action="/login" method="POST">
-                    @csrf
-                    <label class="flex flex-col font-semibold">
-                        Email
-                        <input type="email" name="email" placeholder="Email" required
-                            class="p-2 rounded-sm font-normal" />
-                    </label>
-                    <label class="flex flex-col font-semibold">
-                        Password
-                        <input type="password" name="password" placeholder="Password" required
-                            class="p-2 rounded-sm font-normal" />
-                    </label>
+                <div class="max-w-[400px] mx-auto py-12 px-6 bg-white rounded-lg shadow-md">
+                    <form action="/login" method="POST" class="grid gap-16">
+                        @csrf
+                        <div class="grid gap-4">
+                            <label class="flex flex-col font-semibold">
+                                Email
+                                <input type="email" name="email" placeholder="Email" required
+                                    class="p-2 border-2 rounded-sm font-normal" />
+                            </label>
+                            <label class="flex flex-col font-semibold">
+                                Password
+                                <input type="password" name="password" placeholder="Password" required
+                                    class="p-2 border-2 rounded-sm font-normal" />
+                            </label>
+                        </div>
 
-                    <button type="submit"
-                        class="mt-4 bg-black text-white font-semibold p-2 hover:scale-105 transition-transform">Create</button>
-                </form>
+                        <button type="submit"
+                            class="mt-4 bg-black text-white font-semibold p-2 hover:scale-105 transition-transform">Login</button>
+                    </form>
+                </div>
 
             </div>
 
