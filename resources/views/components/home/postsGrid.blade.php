@@ -12,15 +12,7 @@
 
     <ul class="grid md:grid-cols-2 gap-x-4 gap-y-8">
         @foreach ($posts as $post)
-            <li class="mb-4 p-4 flex flex-col gap-y-4 border-2 bg-white border-black/25 rounded-md shadow-md">
-                <div>
-                    <h3 class="text-xl font-semibold">{{ $post->title }}</h3>
-                </div>
-
-                <div>
-                    <p>{{ $post->body }}</p>
-                </div>
-            </li>
+            <x-home.postCard :id="$post->id" :title="$post->title" :body="$post->body" />
         @endforeach
     </ul>
 
